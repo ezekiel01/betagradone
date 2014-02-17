@@ -1,0 +1,29 @@
+<h1>Listing staatus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @staatus.each do |staatu| %>
+      <tr>
+        <td><%= staatu.name %></td>
+        <td><%= staatu.content %></td>
+        <td><%= link_to 'Show', staatu %></td>
+        <td><%= link_to 'Edit', edit_staatu_path(staatu) %></td>
+        <td><%= link_to 'Destroy', staatu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Staatu', new_staatu_path %>
